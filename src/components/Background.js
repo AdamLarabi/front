@@ -7,7 +7,7 @@ export default function MyComponent({children}) {
       <ImageBackground
         source={require('../assets/background7.jpg')}
         style={{opacity: 0.9, flex: 1}}>
-        <View style={{flex: 1}}>{children}</View>
+        <View style={{flex: 1, backgroundColor: '#1c1612'}}>{children}</View>
       </ImageBackground>
     </View>
   );

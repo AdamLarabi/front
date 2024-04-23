@@ -1,4 +1,12 @@
 {
   "java.compile.nullAnalysis.mode": "automatic",
-  "cSpell.words": ["Acceuil", "graphes", "Initialisation", "Signup"]
+  "cSpell.words": [
+    "Acceuil",
+    "Chiffre",
+    "Graphe",
+    "graphes",
+    "Initialisation",
+    "Signup",
+    "Ville"
+  ]
 }

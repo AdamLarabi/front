@@ -1,7 +1,7 @@
-import {View, Text, TouchableOpacity, StyleSheet, Image} from 'react-native';
 import React from 'react';
+import {View, Text, TouchableOpacity, StyleSheet, Image} from 'react-native';
 
-const MenuItems = () => (
+const MenuItems = ({navigation}) => (
   <View style={styles.menu}>
     <View style={styles.logo}>
       <Image
@@ -9,20 +9,24 @@ const MenuItems = () => (
         style={{width: '100%', height: '100%'}}
       />
     </View>
-    <TouchableOpacity onPress={() => {}}>
+    <TouchableOpacity
+      onPress={() => {
+        navigation.navigate('Carte');
+      }}>
       <Text style={styles.menuItem}>Carte</Text>
     </TouchableOpacity>
-    <TouchableOpacity onPress={() => {}}>
+    <TouchableOpacity
+      onPress={() => {
+        navigation.navigate('Graphe');
+      }}>
       <Text style={styles.menuItem}>Graphes</Text>
     </TouchableOpacity>
-    <TouchableOpacity onPress={() => {}}>
+    <TouchableOpacity
+      onPress={() => {
+        navigation.navigate('Chiffre');
+      }}>
       <Text style={styles.menuItem}>Chiffre brute</Text>
     </TouchableOpacity>
-    {/* <TouchableOpacity>
-      <Text style={styles.closeButton} onPress={() => {}}>
-        Fermer
-      </Text>
-    </TouchableOpacity> */}
   </View>
 );
 
@@ -31,6 +35,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#141414',
     justifyContent: 'center',
+    height: 100,
   },
 
   logo: {
@@ -41,20 +46,14 @@ const styles = StyleSheet.create({
   },
 
   menuItem: {
-    padding: 10,
-    marginBottom: 20,
+    padding: 7,
+    marginBottom: 15,
     backgroundColor: '#202124',
+    fontWeight: 'bold',
     fontSize: 18,
     color: 'white',
     borderRadius: 9,
     paddingStart: 25,
-  },
-  closeButton: {
-    padding: 10,
-    fontSize: 18,
-    color: 'red',
-    backgroundColor: 'black',
-    borderRadius: 10,
   },
 });
 

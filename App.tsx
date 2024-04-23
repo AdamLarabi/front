@@ -5,7 +5,9 @@ import Home from './src/pages/Home';
 import Login from './src/pages/Login';
 import Signup from './src/pages/Signup';
 import Acceuil from './src/pages/Acceuil';
-import InitialisationPage from './src/pages/InitialisationPage ';
+import Carte from './src/pages/Carte';
+import Graphe from './src/pages/Graphe';
+import Chiffre from './src/pages/Chiffre';
 
 const Stack = createNativeStackNavigator();
 
@@ -17,10 +19,9 @@ function App() {
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Signup" component={Signup} />
         <Stack.Screen name="Acceuil" component={Acceuil} />
-        <Stack.Screen
-          name="InitialisationPage "
-          component={InitialisationPage}
-        />
+        <Stack.Screen name="Carte" component={Carte} />
+        <Stack.Screen name="Graphe" component={Graphe} />
+        <Stack.Screen name="Chiffre" component={Chiffre} />
       </Stack.Navigator>
     </NavigationContainer>
   );
