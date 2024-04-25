@@ -1,41 +1,25 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {View} from 'react-native';
 import MapView, {Marker} from 'react-native-maps';
 
-const Map = () => {
-  const [stations, setStations] = useState([]);
-
-  useEffect(() => {
-    // Récupérer les données depuis votre API
-    const fetchData = async () => {
-      try {
-        // requête axios pour obtenir les données des stations
-        const response = await axios.get('http://127.0.0.1:8000/api/list');
-        setStations(response.data);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
+const Map = ({stations}) => {
   return (
-    <View style={{flex: 1, borderRadius: 15}}>
+    <View style={{flex: 1, borderRadius: 15, height: '100%', width: '100%'}}>
       <MapView
-        style={{flex: 1}}
+        style={{flex: 1, height: '100%', width: '100%'}}
         initialRegion={{
-          latitude: 35.7595, // Latitude par défaut (par exemple)
-          longitude: -5.833, // Longitude par défaut (par exemple)
+          latitude: 35.7595, // Default latitude
+          longitude: -5.833, // Default longitude
           latitudeDelta: 10,
           longitudeDelta: 10,
         }}>
+        {/* Render markers using stations data */}
         {stations.map(station => (
           <Marker
             key={station.id_station}
             coordinate={{
-              latitude: station.latitude,
-              longitude: station.longitude,
+              latitude: parseFloat(station.latitude), // Convert latitude to float
+              longitude: parseFloat(station.longitude), // Convert longitude to float
             }}
             title={`Station ${station.id_station}`}
             description={`Altitude: ${station.altitude}`}
